@@ -1,0 +1,80 @@
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.util.Log;
+
+#parse("File Header.java")
+public class  ${NAME} extends Fragment {
+    private String TAG = ${NAME}.class.getSimpleName();
+    private Activity mActivity;
+    private View rootView;
+
+    public static ${NAME} newInstance(Activity activity) {
+        ${NAME} fragment = new ${NAME}();
+        fragment.mActivity = activity;
+        return fragment;
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.${LAYOUT_RES_ID}, container, false);
+        return rootView;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (getActivity() != null)
+            mActivity = getActivity();
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (mActivity != null) {
+            mActivity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+            try {
+                uiInitialize(rootView);
+            } catch (Exception e) {
+                Log.e(TAG, "Error while initializing UI");
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+         try {
+		if (mActivity != null) {
+          
+        }
+		} catch (Exception e) {
+               Log.e(TAG, "Error while screen resumed");
+                e.printStackTrace();
+            }
+    }
+
+	 /**
+     * Attempts to initialize all fragment resources
+     */
+    private void uiInitialize(View rootView) {
+
+        if (mActivity != null && rootView != null) {
+            try {
+              
+            } catch (Exception e) {
+                e.printStackTrace();
+                 Log.e(TAG, "Error while initializing UI");
+            }
+        }
+    }
+}
