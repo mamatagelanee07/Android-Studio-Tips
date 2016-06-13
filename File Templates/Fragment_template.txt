@@ -10,6 +10,17 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.util.Log;
 
+/**
+ * This is sample file template for Fragment.
+ * You just need to just copy this template and Follow below steps to add in Android-Studio.
+ * 1. Right click on folder -> New -> Edit templates
+ * 2. Click on '+' to add template.
+ * 3. Add template name as 'Fragment' and paste file.
+ * Now you can just use this template.
+ * Note: Remove above steps while adding template to your Android-Studio. 
+ * @author Andy
+ */
+
 #parse("File Header.java")
 public class  ${NAME} extends Fragment {
     private String TAG = ${NAME}.class.getSimpleName();
